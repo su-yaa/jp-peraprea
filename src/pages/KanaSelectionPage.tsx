@@ -33,7 +33,7 @@ export default function KanaSelectionPage() {
         />
 
         <SelectionCard
-          title="가타카나 (전체)"
+          title="카타카나 (전체)"
           subtitle="Katakana All"
           icon="ア"
           theme="green"
