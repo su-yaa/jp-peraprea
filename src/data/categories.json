@@ -1,0 +1,38 @@
+[
+  {
+    "id": "romance",
+    "title": "이성과의 대화",
+    "icon": "❤️",
+    "color": "bg-red-50 text-red-500 border-red-100"
+  },
+  {
+    "id": "daily",
+    "title": "일상 루틴",
+    "icon": "☀️",
+    "color": "bg-orange-50 text-orange-500 border-orange-100"
+  },
+  {
+    "id": "friend",
+    "title": "친구와 술자리",
+    "icon": "🍺",
+    "color": "bg-blue-50 text-blue-500 border-blue-100"
+  },
+  {
+    "id": "biz",
+    "title": "비즈니스",
+    "icon": "💼",
+    "color": "bg-gray-50 text-gray-600 border-gray-200"
+  },
+  {
+    "id": "travel",
+    "title": "여행지에서",
+    "icon": "✈️",
+    "color": "bg-green-50 text-green-500 border-green-100"
+  },
+  {
+    "id": "emotion",
+    "title": "감정 표현",
+    "icon": "🤔",
+    "color": "bg-purple-50 text-purple-500 border-purple-100"
+  }
+]

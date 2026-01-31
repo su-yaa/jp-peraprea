@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/415/415733.png",
+    "krWord": "사과",
+    "answer": "りんご",
+    "options": [
+      "りんご",
+      "みかん",
+      "いちご",
+      "ぶどう"
+    ]
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/2276/2276931.png",
+    "krWord": "책",
+    "answer": "ほん",
+    "options": [
+      "ほん",
+      "ぺん",
+      "のーと",
+      "かばん"
+    ]
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+    "krWord": "고양이",
+    "answer": "ねこ",
+    "options": [
+      "ねこ",
+      "いぬ",
+      "とり",
+      "さかな"
+    ]
+  }
+]

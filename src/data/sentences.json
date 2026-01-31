@@ -1,0 +1,54 @@
+[
+  {
+    "id": "q1",
+    "categoryId": "romance",
+    "krPrompt": "같이 영화 보러 갈래?",
+    "correctAnswer": "一緒に 映画を 見に行く？",
+    "chunks": [
+      {
+        "id": 1,
+        "text": "一緒に",
+        "meaning": "같이",
+        "width": "70px"
+      },
+      {
+        "id": 2,
+        "text": "映画を",
+        "meaning": "영화를",
+        "width": "70px"
+      },
+      {
+        "id": 3,
+        "text": "見に行く？",
+        "meaning": "보러 갈래?",
+        "width": "100px"
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "categoryId": "daily",
+    "krPrompt": "내일 몇 시에 일어나?",
+    "correctAnswer": "明日 何時に 起きる？",
+    "chunks": [
+      {
+        "id": 1,
+        "text": "明日",
+        "meaning": "내일",
+        "width": "60px"
+      },
+      {
+        "id": 2,
+        "text": "何時に",
+        "meaning": "몇 시에",
+        "width": "70px"
+      },
+      {
+        "id": 3,
+        "text": "起きる？",
+        "meaning": "일어나?",
+        "width": "80px"
+      }
+    ]
+  }
+]

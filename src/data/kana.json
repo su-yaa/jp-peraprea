@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "sound": "아",
+    "correctChar": "あ",
+    "options": [
+      "あ",
+      "い",
+      "う",
+      "え"
+    ]
+  },
+  {
+    "id": 2,
+    "sound": "카",
+    "correctChar": "か",
+    "options": [
+      "か",
+      "き",
+      "く",
+      "け"
+    ]
+  },
+  {
+    "id": 3,
+    "sound": "사",
+    "correctChar": "さ",
+    "options": [
+      "さ",
+      "し",
+      "す",
+      "せ"
+    ]
+  },
+  {
+    "id": 4,
+    "sound": "타",
+    "correctChar": "た",
+    "options": [
+      "た",
+      "ち",
+      "つ",
+      "て"
+    ]
+  },
+  {
+    "id": 5,
+    "sound": "나",
+    "correctChar": "な",
+    "options": [
+      "な",
+      "に",
+      "ぬ",
+      "ね"
+    ]
+  }
+]
