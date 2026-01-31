@@ -1,5 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors */
+  --color-cream: #FFFDF5;
+  --color-pink-light: #FFEDF0;
+  --color-pink: #FFB8C6;
+  --color-pink-dark: #FF8FA3;
+  --color-mint-light: #E6FFFA;
+  --color-mint: #6EE7B7;
+  --color-mint-dark: #34D399;
+  --color-sky-light: #E0F2FE;
+  --color-sky: #7DD3FC;
+  --color-sky-dark: #38BDF8;
+  --color-cocoa: #5D4037;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 0 0;
+  --shadow-soft-lg: 0 6px 0 0;
+
+  /* Radius */
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-5xl: 40px;
+
+  /* Animations */
+  --animate-shake: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+  --animate-bounce: bounce 1s infinite;
+  --animate-fade-in: fade-in 0.3s ease-out;
+
+  @keyframes shake {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-5px);
+    }
+
+    75% {
+      transform: translateX(5px);
+    }
+  }
+
+  @keyframes bounce {
+
+    0%,
+    100% {
+      transform: translateY(-5%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
 @layer base {
   :root {
     --sat: env(safe-area-inset-top);
@@ -18,7 +87,7 @@
   }
 
   body {
-    @apply bg-gray-100 flex justify-center items-center font-sans text-gray-900;
+    @apply bg-cream flex justify-center items-center font-sans text-cocoa;
   }
 
   #root {
@@ -26,14 +95,17 @@
   }
 }
 
-/* Custom Scrollbar Hide if needed */
+@layer utilities {
+  .btn-soft-3d {
+    @apply transition-all active:translate-y-[4px] active:shadow-none shadow-soft hover:brightness-105;
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }

@@ -1,141 +1,120 @@
 import { useNavigate } from 'react-router-dom';
-import { Settings } from 'lucide-react';
+import { Settings, Sparkles } from 'lucide-react';
+import { cn } from '../lib/utils';
 
 export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-gray-50">
+    <div className="flex flex-col h-full bg-white relative overflow-hidden">
+      {/* Decor Circles */}
+      <div className="absolute top-[-50px] right-[-50px] w-40 h-40 bg-pink-light rounded-full opacity-50 blur-2xl pointer-events-none" />
+      <div className="absolute bottom-[-20px] left-[-20px] w-32 h-32 bg-sky-light rounded-full opacity-50 blur-2xl pointer-events-none" />
+
       {/* Header */}
-      <header className="px-6 pb-5 pt-12 flex justify-between items-center bg-white border-b border-gray-100">
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-extrabold text-gray-800 tracking-tight">Daily Talk JP</h1>
-          <span className="text-sm text-gray-400 font-medium">오늘의 일본어 한 문장</span>
+      <header className="px-6 pt-8 pb-4 flex justify-between items-center z-10">
+        <div className="flex items-center gap-2">
+          <div className="bg-yellow-100 p-2 rounded-2xl rotate-[-10deg]">
+            <span className="text-2xl">🐤</span>
+          </div>
+          <div>
+            <h1 className="text-xl font-extrabold text-cocoa leading-none">Daily Talk</h1>
+            <span className="text-xs text-gray-400 font-bold">오하요! 오늘도 힘내자!</span>
+          </div>
         </div>
         <button
-          className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-          title="설정"
+          className="p-3 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors text-cocoa"
         >
-          <Settings className="w-6 h-6 text-gray-700" />
+          <Settings className="w-5 h-5" />
         </button>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 overflow-y-auto no-scrollbar">
+      <main className="flex-1 px-6 pb-6 overflow-y-auto no-scrollbar flex flex-col">
 
-        {/* Section 1: Basic Learning */}
-        <div className="mb-4">
-          <div className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-            학습 모드 선택
+        {/* Mascot Greeting Area */}
+        <div className="mb-8 flex flex-col items-center">
+          <div className="relative group cursor-pointer" onClick={() => navigate('/kana')}>
+            <div className="text-[80px] drop-shadow-lg transition-transform hover:scale-110 active:scale-95 duration-300">
+              🐻
+            </div>
+            <div className="absolute -right-4 top-0 bg-white px-3 py-1.5 rounded-xl rounded-bl-sm shadow-soft text-xs font-bold text-cocoa animate-bounce">
+              공부할 시간이야!
+            </div>
+          </div>
+        </div>
+
+        {/* Menu Grid */}
+        <div className="grid gap-4">
+          <div className="text-lg font-extrabold text-cocoa mb-1 flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+            오늘의 학습
           </div>
 
           {/* Kana Card */}
           <MenuCard
             icon="🐣"
             title="기초 다지기"
-            desc="히라가나/가타카나부터" // Line break handled by UI logic if needed, or simple text
-            theme="yellow"
+            subtitle="히라가나/가타카나"
+            theme="pink"
             onClick={() => navigate('/kana')}
           />
 
           {/* Word Card */}
           <MenuCard
             icon="🖼️"
-            title="그림 단어 퀴즈"
-            desc="이미지로 연상하며 필수 단어 암기"
-            theme="green"
+            title="그림 단어장"
+            subtitle="이미지로 외우는 단어"
+            theme="mint"
             onClick={() => navigate('/word-pic')}
           />
-        </div>
 
-        {/* Spacer */}
-        <div className="h-2"></div>
-
-        {/* Section 2: Real Conversation */}
-        <div className="mb-4">
-          <div className="text-lg font-bold text-gray-800 mb-4 text-blue-600">
-            🔥 도전! 실전 회화
-          </div>
-
-          {/* Talk Card (Special Style) */}
+          {/* Category Card (Full Width) */}
           <div
             onClick={() => navigate('/categories')}
-            className="group relative flex items-center p-5 bg-blue-50/50 border-2 border-blue-100 rounded-[20px] 
-            cursor-pointer active:scale-95 transition-all duration-150 shadow-sm hover:border-blue-200"
+            className="bg-sky-light border-b-4 border-sky-dark/20 rounded-3xl p-5 flex items-center gap-4 cursor-pointer active:scale-[0.98] transition-all hover:brightness-105"
           >
-            <div className="w-[56px] h-[56px] rounded-2xl bg-blue-500 text-white flex justify-center items-center text-3xl mr-4 shadow-lg shadow-blue-200">
+            <div className="bg-white w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm">
               🗣️
             </div>
             <div className="flex-1">
-              <div className="text-[17px] font-bold text-blue-600 mb-1">상황별 문장 학습</div>
-              <div className="text-[13px] text-gray-500 leading-tight">
-                연애, 비즈니스, 여행 등<br />원하는 상황을 골라보세요
-              </div>
+              <h3 className="text-lg font-extrabold text-cocoa/90">실전 회화 문장</h3>
+              <p className="text-sm text-cocoa/60 font-medium">상황별로 골라서 말하기 연습</p>
             </div>
-            <div className="text-blue-400 text-xl font-bold ml-2">›</div>
+            <div className="bg-white/50 w-10 h-10 rounded-full flex items-center justify-center text-sky-dark font-bold">
+              Go
+            </div>
           </div>
         </div>
 
       </main>
-
-      {/* Tab Bar (Visual Only) */}
-      <nav className="h-[80px] bg-white border-t border-gray-100 flex justify-around items-center pb-5">
-        <TabItem icon="🏠" label="홈" active />
-        <TabItem icon="📊" label="통계" />
-        <TabItem icon="👤" label="내 정보" />
-      </nav>
     </div>
   );
 }
 
-// --- Sub Components ---
-
-interface MenuCardProps {
-  icon: string;
-  title: string;
-  desc: string;
-  theme: 'yellow' | 'green';
-  onClick: () => void;
-}
-
-function MenuCard({ icon, title, desc, theme, onClick }: MenuCardProps) {
-  const themeStyles = {
-    yellow: {
-      bg: 'hover:border-yellow-300',
-      icon: 'bg-yellow-bg',
-    },
-    green: {
-      bg: 'hover:border-green-300',
-      icon: 'bg-green-bg',
-    }
-  };
-
-  const style = themeStyles[theme];
+function MenuCard({ icon, title, subtitle, theme, onClick }: {
+  icon: string, title: string, subtitle: string, theme: 'pink' | 'mint', onClick: () => void
+}) {
+  const styles = {
+    pink: "bg-pink-light border-pink-dark/20",
+    mint: "bg-mint-light border-mint-dark/20",
+  }[theme];
 
   return (
-    <div
+    <button
       onClick={onClick}
-      className={`flex items-center p-5 bg-white border border-transparent rounded-[20px] mb-4 
-      shadow-[0_4px_15px_rgba(0,0,0,0.03)] cursor-pointer active:scale-95 transition-all duration-150 
-      ${style.bg}`}
+      className={cn(
+        "w-full p-5 rounded-3xl flex items-center gap-4 text-left border-b-4 transition-all active:scale-[0.98] hover:brightness-105",
+        styles
+      )}
     >
-      <div className={`w-[56px] h-[56px] rounded-2xl flex justify-center items-center text-3xl mr-4 ${style.icon}`}>
+      <div className="bg-white w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm">
         {icon}
       </div>
-      <div className="flex-1">
-        <div className="text-[17px] font-bold text-gray-800 mb-1">{title}</div>
-        <div className="text-[13px] text-gray-400 leading-tight">{desc}</div>
+      <div>
+        <h3 className="text-lg font-extrabold text-cocoa/90">{title}</h3>
+        <p className="text-sm text-cocoa/60 font-medium">{subtitle}</p>
       </div>
-      <div className="text-gray-300 text-xl font-bold ml-2">›</div>
-    </div>
-  );
-}
-
-function TabItem({ icon, label, active = false }: { icon: string; label: string; active?: boolean }) {
-  return (
-    <div className={`flex flex-col items-center gap-1 text-[10px] font-semibold ${active ? 'text-gray-900' : 'text-gray-300'}`}>
-      <span className="text-2xl mb-0.5">{icon}</span>
-      {label}
-    </div>
+    </button>
   );
 }

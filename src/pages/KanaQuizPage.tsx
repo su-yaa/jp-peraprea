@@ -17,40 +17,31 @@ export default function KanaQuizPage() {
   const [shake, setShake] = useState(false);
 
   useEffect(() => {
-    // 1. Fetch & Shuffle
     const initQuiz = async () => {
       try {
         const data = await api.get<KanaData[]>('/kana');
-        // Shuffle questions
         setQuestions(shuffleArray(data));
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+      } catch (err) { console.error(err); }
+      finally { setLoading(false); }
     };
     initQuiz();
   }, []);
 
   const handleOptionClick = async (option: string) => {
-    if (selectedOption) return; // Block multiple clicks
+    if (selectedOption) return;
 
     setSelectedOption(option);
     const currentQ = questions[currentIndex];
 
     if (option === currentQ.correctChar) {
-      // Correct
       setIsCorrect(true);
-      await sleep(1000); // Wait 1s
+      await sleep(800);
       nextQuestion();
     } else {
-      // Wrong
       setIsCorrect(false);
       setShake(true);
-      setTimeout(() => setShake(false), 500); // Reset shake
-      await sleep(1000); // Show red for 1s
-      // Reset state for retry or next? Usually retry until correct in strict mode, 
-      // but for this simple app, let's just reset selection to allow retry.
+      setTimeout(() => setShake(false), 500);
+      await sleep(800);
       setSelectedOption(null);
       setIsCorrect(null);
     }
@@ -62,51 +53,43 @@ export default function KanaQuizPage() {
       setSelectedOption(null);
       setIsCorrect(null);
     } else {
-      // End of Quiz
-      alert("모든 문제를 풀었습니다!"); // Replace with proper result modal later preferably
+      alert("학습 완료! 참 잘했어요 👏");
       navigate('/');
     }
   };
 
-  if (loading) return <div className="h-full flex justify-center items-center">Loading...</div>;
-
+  if (loading) return <div className="h-full flex justify-center items-center text-cocoa font-bold">로딩중...</div>;
   const currentQ = questions[currentIndex];
 
   return (
-    <div className="flex flex-col h-full bg-yellow-50 relative overflow-hidden">
+    <div className="flex flex-col h-full bg-pink-light/50 relative">
       {/* Header */}
-      <header className="px-4 py-4 pt-12 flex items-center absolute top-0 w-full z-10">
-        <button onClick={() => navigate(-1)} className="p-2 text-gray-800 rounded-full hover:bg-black/5">
-          <ChevronLeft className="w-8 h-8" />
+      <header className="px-6 pt-10 pb-2 flex justify-between items-center z-10">
+        <button onClick={() => navigate(-1)} className="p-3 bg-white rounded-2xl shadow-soft text-cocoa">
+          <ChevronLeft className="w-6 h-6" />
         </button>
+        <div className="px-4 py-2 bg-white rounded-full font-bold text-pink-dark shadow-sm text-sm">
+          {currentIndex + 1} / {questions.length}
+        </div>
       </header>
 
-      {/* Progress */}
-      <div className="absolute top-6 right-6 text-sm font-bold text-yellow-600 pt-10">
-        {currentIndex + 1} / {questions.length}
-      </div>
-
-      <main className="flex-1 flex flex-col items-center justify-center p-6">
+      <main className="flex-1 flex flex-col items-center justify-center p-6 pb-20">
         {/* Question Card */}
-        <div className="w-full max-w-[280px] aspect-square bg-white rounded-[40px] shadow-lg flex flex-col justify-center items-center mb-12 border-4 border-yellow-200">
-          <span className="text-gray-400 text-sm font-bold mb-2">이 발음은?</span>
-          <h1 className="text-[80px] font-black text-gray-800 leading-none">{currentQ.sound}</h1>
+        <div className="w-[200px] h-[200px] bg-white rounded-[48px] shadow-soft mb-12 flex flex-col justify-center items-center border-[6px] border-white ring-4 ring-pink-200">
+          <span className="text-pink-400 text-xs font-bold mb-2 uppercase tracking-widest">Sound</span>
+          <h1 className="text-[90px] font-black text-cocoa leading-none mt-[-10px]">{currentQ.sound}</h1>
         </div>
 
-        {/* Options Grid */}
+        {/* Options */}
         <div className={cn(
-          "grid grid-cols-2 gap-4 w-full px-4",
-          shake && "animate-shake" // Need custom shake animation in tailwind config or global css
+          "grid grid-cols-2 gap-4 w-full px-2",
+          shake && "animate-shake"
         )}>
           {currentQ.options.map((opt) => {
-            let stateClass = "bg-white border-white text-gray-700 hover:border-yellow-200";
-
+            let stateClass = "bg-white border-2 border-transparent text-cocoa";
             if (selectedOption === opt) {
-              if (isCorrect) {
-                stateClass = "bg-green-100 border-green-400 text-green-600";
-              } else if (isCorrect === false) {
-                stateClass = "bg-red-100 border-red-400 text-red-600";
-              }
+              if (isCorrect) stateClass = "bg-mint border-mint-dark text-white shadow-none translate-y-[4px]";
+              else if (isCorrect === false) stateClass = "bg-pink-dark border-pink-dark text-white shadow-none translate-y-[4px]";
             }
 
             return (
@@ -114,7 +97,7 @@ export default function KanaQuizPage() {
                 key={opt}
                 onClick={() => handleOptionClick(opt)}
                 className={cn(
-                  "h-20 rounded-2xl text-4xl font-bold shadow-sm border-2 transition-all active:scale-95",
+                  "h-20 rounded-3xl text-3xl font-bold shadow-soft transition-all active:scale-95 active:shadow-none active:translate-y-[4px] hover:brightness-105",
                   stateClass
                 )}
               >

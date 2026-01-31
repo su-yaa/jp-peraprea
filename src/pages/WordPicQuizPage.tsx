@@ -19,24 +19,20 @@ export default function WordPicQuizPage() {
       try {
         const data = await api.get<WordPicData[]>('/word-pic');
         setQuestions(shuffleArray(data));
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+      } catch (err) { console.error(err); }
+      finally { setLoading(false); }
     };
     initQuiz();
   }, []);
 
   const handleOptionClick = async (option: string) => {
     if (selectedOption) return;
-
     setSelectedOption(option);
     const currentQ = questions[currentIndex];
 
     if (option === currentQ.answer) {
       setIsCorrect(true);
-      await sleep(1200); // Celebration time
+      await sleep(1200);
       nextQuestion();
     } else {
       setIsCorrect(false);
@@ -57,58 +53,50 @@ export default function WordPicQuizPage() {
     }
   };
 
-  if (loading) return <div className="h-full flex justify-center items-center">Loading...</div>;
-
+  if (loading) return <div className="h-full flex justify-center items-center text-cocoa font-bold">로딩중...</div>;
   const currentQ = questions[currentIndex];
 
   return (
-    <div className="flex flex-col h-full bg-green-50 relative">
+    <div className="flex flex-col h-full bg-mint-light/50 relative">
       {/* Header */}
-      <header className="px-4 py-4 pt-12 flex items-center absolute top-0 w-full z-10">
-        <button onClick={() => navigate(-1)} className="p-2 text-gray-800 rounded-full hover:bg-black/5">
-          <ChevronLeft className="w-8 h-8" />
+      <header className="px-6 pt-10 pb-4 flex justify-between items-center z-10">
+        <button onClick={() => navigate(-1)} className="p-3 bg-white rounded-2xl shadow-soft text-cocoa">
+          <ChevronLeft className="w-6 h-6" />
         </button>
+        <div className="px-4 py-2 bg-white rounded-full font-bold text-mint-dark shadow-sm text-sm">
+          {currentIndex + 1} / {questions.length}
+        </div>
       </header>
 
-      {/* Progress */}
-      <div className="absolute top-6 right-6 text-sm font-bold text-green-600 pt-10">
-        {currentIndex + 1} / {questions.length}
-      </div>
-
-      <main className="flex-1 flex flex-col items-center justify-center p-6">
+      <main className="flex-1 flex flex-col items-center justify-center p-6 pb-20">
         {/* Image Card */}
-        <div className="w-full max-w-[300px] h-[340px] bg-white rounded-[32px] shadow-sm mb-8 flex flex-col overflow-hidden relative border-4 border-green-100">
-          <div className="flex-1 bg-gray-100 flex justify-center items-center p-6">
+        <div className="w-full max-w-[300px] bg-white rounded-[40px] shadow-soft mb-8 overflow-hidden border-[6px] border-white ring-4 ring-mint-light">
+          <div className="aspect-[4/3] bg-gray-50 flex justify-center items-center p-6">
             <img
               src={currentQ.imageUrl}
               alt={currentQ.krWord}
               className="w-full h-full object-contain drop-shadow-md"
             />
           </div>
-          <div className="h-[80px] bg-white flex justify-center items-center border-t border-gray-100">
-            <span className="text-2xl font-bold text-gray-800">{currentQ.krWord}</span>
+          <div className="py-6 bg-white flex justify-center items-center border-t border-gray-100">
+            <span className="text-2xl font-extrabold text-cocoa">{currentQ.krWord}</span>
           </div>
 
-          {/* Correct Overlay (Celebration) */}
+          {/* Overlay */}
           {isCorrect && (
-            <div className="absolute inset-0 bg-green-500/80 backdrop-blur-sm flex justify-center items-center animate-in fade-in zoom-in duration-300">
+            <div className="absolute inset-0 bg-mint-dark/80 backdrop-blur-[2px] flex justify-center items-center animate-in fade-in">
               <div className="text-6xl animate-bounce">🎉</div>
             </div>
           )}
         </div>
 
-        {/* Options Chips */}
+        {/* Options */}
         <div className="flex flex-wrap gap-3 justify-center w-full">
           {currentQ.options.map((opt) => {
-            let stateClass = "bg-white border-green-100 text-gray-700 hover:border-green-300";
-
+            let stateClass = "bg-white border-2 border-transparent text-cocoa";
             if (selectedOption === opt) {
-              if (isCorrect) {
-                // Correct logic handled by overlay, but highlighting the button is good too
-                stateClass = "bg-green-500 text-white border-green-500";
-              } else if (isCorrect === false) {
-                stateClass = "bg-red-500 text-white border-red-500 animate-shake";
-              }
+              if (isCorrect) stateClass = "bg-mint border-mint-dark text-white";
+              else if (isCorrect === false) stateClass = "bg-pink-dark border-pink-dark text-white animate-shake";
             }
 
             return (
@@ -116,7 +104,7 @@ export default function WordPicQuizPage() {
                 key={opt}
                 onClick={() => handleOptionClick(opt)}
                 className={cn(
-                  "px-6 py-3 rounded-full text-lg font-bold shadow-sm border-2 transition-all active:scale-95",
+                  "px-6 py-4 rounded-3xl text-lg font-bold shadow-soft transition-all active:scale-95 active:shadow-none active:translate-y-[4px] hover:brightness-105",
                   stateClass
                 )}
               >

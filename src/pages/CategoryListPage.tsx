@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import api from '../lib/apiClient';
 import type { Category } from '../types';
-import { cn } from '../lib/utils'; // Assuming cn utility is implemented
+import { cn } from '../lib/utils';
 
 export default function CategoryListPage() {
   const navigate = useNavigate();
@@ -11,13 +11,12 @@ export default function CategoryListPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch Categories
     const fetchData = async () => {
       try {
         const data = await api.get<Category[]>('/categories');
         setCategories(data);
       } catch (error) {
-        console.error("Failed to fetch categories", error);
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -26,29 +25,29 @@ export default function CategoryListPage() {
   }, []);
 
   return (
-    <div className="flex flex-col h-full bg-white">
+    <div className="flex flex-col h-full bg-cream">
       {/* Header */}
-      <header className="px-2 pb-3 pt-12 flex items-center bg-white/95 backdrop-blur-sm sticky top-0 z-10 border-b border-gray-100">
+      <header className="px-4 pb-4 pt-10 flex items-center sticky top-0 z-10">
         <button
           onClick={() => navigate(-1)}
-          className="p-2 text-gray-800 hover:bg-gray-100 rounded-full transition-colors"
+          className="p-3 bg-white text-cocoa rounded-2xl shadow-soft hover:brightness-95 transition-all"
         >
-          <ChevronLeft className="w-7 h-7" />
+          <ChevronLeft className="w-6 h-6" />
         </button>
-        <h1 className="flex-1 text-lg font-bold text-center text-gray-800 mr-11">
-          실전 회화 주제
+        <h1 className="flex-1 text-xl font-extrabold text-center text-cocoa mr-12">
+          상황별 회화
         </h1>
       </header>
 
       {/* Content */}
       <main className="flex-1 p-6 overflow-y-auto no-scrollbar">
-        <div className="text-xl font-bold text-gray-800 mb-6 leading-snug">
-          어떤 상황을<br />연습해 볼까요?
+        <div className="text-2xl font-extrabold text-cocoa mb-8 leading-snug">
+          어떤 상황에서<br />이야기 해볼까요?
         </div>
 
         {loading ? (
           <div className="flex justify-center items-center h-40">
-            <div className="w-8 h-8 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
+            <div className="w-10 h-10 border-4 border-white border-t-pink-400 rounded-full animate-spin"></div>
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-4 pb-10">
@@ -67,32 +66,23 @@ export default function CategoryListPage() {
 }
 
 function CategoryCard({ category, onClick }: { category: Category; onClick: () => void }) {
-  // Extract color classes from the string "bg-red-50 text-red-500 border-red-100"
-  // Assuming the color string in mocked data is exactly space separated classes.
-  // We can pass them directly to className.
-
   return (
-    <div
+    <button
       onClick={onClick}
       className={cn(
-        "flex flex-col items-center justify-center py-6 px-3 rounded-[24px]",
-        "border border-transparent cursor-pointer active:scale-95 transition-all duration-150",
-        "shadow-sm hover:shadow-md",
-        category.color // Apply custom color classes from data
+        "flex flex-col items-center justify-center py-8 px-2 rounded-3xl",
+        "relative overflow-hidden transition-all active:scale-[0.96] shadow-soft hover:brightness-105",
+        "bg-white border-2 border-transparent", // Base
+        category.color // This usually has bg-red-50 etc. We might want to override or ensure it looks good.
+        // Assuming category.color provides background colors like 'bg-red-50 text-red-500'
       )}
     >
-      <div className="text-[42px] mb-3 drop-shadow-sm select-none">
+      <div className="text-5xl mb-4 drop-shadow-sm transform group-hover:scale-110 transition-transform">
         {category.icon}
       </div>
-      <div className={cn(
-        "text-[15px] font-bold text-center break-keep leading-tight",
-        // Extract text color from category.color or imply it. 
-        // Actually the category.color string has 'text-red-500', so it applies automatically.
-      )}>
-        {category.title.split(' ').map((word, i) => (
-          <span key={i} className="block">{word}</span>
-        ))}
+      <div className="text-base font-extrabold text-center leading-tight text-cocoa">
+        {category.title}
       </div>
-    </div>
+    </button>
   );
 }
