@@ -22,6 +22,8 @@ export interface QuizData {
 
 export interface KanaData {
   id: number;
+  type: 'hiragana' | 'katakana';
+  row: string; // "a", "ka", "sa", etc.
   sound: string; // "아"
   correctChar: string; // "あ"
   options: string[]; // ["あ", "い", "う", "え"]

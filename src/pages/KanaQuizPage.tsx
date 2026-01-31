@@ -3,10 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import api from '../lib/apiClient';
 import type { KanaData } from '../types';
-import { cn, shuffleArray, sleep } from '../lib/utils';
+import { cn, shuffleArray } from '../lib/utils';
+
+import { useSearchParams } from 'react-router-dom';
 
 export default function KanaQuizPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const quizType = searchParams.get('type') as 'hiragana' | 'katakana' || 'hiragana';
+  const quizRow = searchParams.get('row');
+
   const [questions, setQuestions] = useState<KanaData[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -20,12 +26,26 @@ export default function KanaQuizPage() {
     const initQuiz = async () => {
       try {
         const data = await api.get<KanaData[]>('/kana');
-        setQuestions(shuffleArray(data));
+        // Filter by type
+        let filtered = data.filter(q => q.type === quizType);
+
+        // Filter by row if present
+        if (quizRow) {
+          filtered = filtered.filter(q => q.row === quizRow);
+        }
+
+        // Randomize Questions AND Options
+        const randomized = shuffleArray(filtered).map(q => ({
+          ...q,
+          options: shuffleArray([...q.options])
+        }));
+
+        setQuestions(randomized);
       } catch (err) { console.error(err); }
       finally { setLoading(false); }
     };
     initQuiz();
-  }, []);
+  }, [quizType]);
 
   const handleOptionClick = async (option: string) => {
     if (selectedOption) return;
@@ -35,27 +55,35 @@ export default function KanaQuizPage() {
 
     if (option === currentQ.correctChar) {
       setIsCorrect(true);
-      await sleep(800);
+      // Instant transition as requested
       nextQuestion();
     } else {
       setIsCorrect(false);
       setShake(true);
-      setTimeout(() => setShake(false), 500);
-      await sleep(800);
+      setTimeout(() => setShake(false), 500); // 500ms shake animation is UI logic, not delay. leaving it? 
+      // The user wants to remove delays.
+      // "sleep" specifically.
+      // The else block had `await sleep(800)`.
       setSelectedOption(null);
       setIsCorrect(null);
     }
   };
 
   const nextQuestion = () => {
+    // Infinite Loop: If end reached, shuffle and restart
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(prev => prev + 1);
-      setSelectedOption(null);
-      setIsCorrect(null);
     } else {
-      alert("학습 완료! 참 잘했어요 👏");
-      navigate('/');
+      // Reshuffle questions AND options for variety
+      setQuestions(prev => shuffleArray(prev).map(q => ({
+        ...q,
+        options: shuffleArray([...q.options])
+      })));
+      setCurrentIndex(0);
     }
+
+    setSelectedOption(null);
+    setIsCorrect(null);
   };
 
   if (loading) return <div className="h-full flex justify-center items-center text-cocoa font-bold">로딩중...</div>;
@@ -68,8 +96,9 @@ export default function KanaQuizPage() {
         <button onClick={() => navigate(-1)} className="p-3 bg-white rounded-2xl shadow-soft text-cocoa">
           <ChevronLeft className="w-6 h-6" />
         </button>
-        <div className="px-4 py-2 bg-white rounded-full font-bold text-pink-dark shadow-sm text-sm">
-          {currentIndex + 1} / {questions.length}
+        <div className="px-4 py-2 bg-white rounded-full font-bold text-pink-dark shadow-sm text-sm flex items-center gap-1">
+          <span>∞</span>
+          <span>무한 모드</span>
         </div>
       </header>
 
@@ -77,7 +106,7 @@ export default function KanaQuizPage() {
         {/* Question Card */}
         <div className="w-[200px] h-[200px] bg-white rounded-[48px] shadow-soft mb-12 flex flex-col justify-center items-center border-[6px] border-white ring-4 ring-pink-200">
           <span className="text-pink-400 text-xs font-bold mb-2 uppercase tracking-widest">Sound</span>
-          <h1 className="text-[90px] font-black text-cocoa leading-none mt-[-10px]">{currentQ.sound}</h1>
+          <h1 className="text-5xl font-black text-cocoa text-center leading-tight">{currentQ.sound}</h1>
         </div>
 
         {/* Options */}

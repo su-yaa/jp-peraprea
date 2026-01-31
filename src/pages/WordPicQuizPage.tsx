@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import api from '../lib/apiClient';
 import type { WordPicData } from '../types';
-import { cn, shuffleArray, sleep } from '../lib/utils';
+import { cn, shuffleArray } from '../lib/utils';
 
 export default function WordPicQuizPage() {
   const navigate = useNavigate();
@@ -32,11 +32,9 @@ export default function WordPicQuizPage() {
 
     if (option === currentQ.answer) {
       setIsCorrect(true);
-      await sleep(1200);
       nextQuestion();
     } else {
       setIsCorrect(false);
-      await sleep(1000);
       setSelectedOption(null);
       setIsCorrect(null);
     }

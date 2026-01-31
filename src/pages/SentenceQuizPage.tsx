@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, Lightbulb } from 'lucide-react';
 import api from '../lib/apiClient';
 import type { QuizData, Category } from '../types';
-import { cn, sleep } from '../lib/utils';
+import { cn } from '../lib/utils';
 import categoriesData from '../data/categories.json';
 
 export default function SentenceQuizPage() {
@@ -95,7 +95,7 @@ export default function SentenceQuizPage() {
   const startCheck = async () => {
     setShowModal(true);
     setIsChecking(true);
-    await sleep(1500);
+    // await sleep(1500); // Removed intentional delay
     const isPerfect = currentQ.chunks.every(c => (userAnswers[c.id] || "").trim() === c.text);
     setFeedback({
       isPerfect,

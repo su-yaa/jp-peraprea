@@ -1,7 +1,9 @@
 [
   {
     "id": 1,
-    "sound": "아",
+    "type": "hiragana",
+    "row": "a",
+    "sound": "아 (a)",
     "correctChar": "あ",
     "options": [
       "あ",
@@ -12,7 +14,61 @@
   },
   {
     "id": 2,
-    "sound": "카",
+    "type": "hiragana",
+    "row": "a",
+    "sound": "이 (i)",
+    "correctChar": "い",
+    "options": [
+      "い",
+      "あ",
+      "う",
+      "え"
+    ]
+  },
+  {
+    "id": 3,
+    "type": "hiragana",
+    "row": "a",
+    "sound": "우 (u)",
+    "correctChar": "う",
+    "options": [
+      "う",
+      "あ",
+      "い",
+      "お"
+    ]
+  },
+  {
+    "id": 4,
+    "type": "hiragana",
+    "row": "a",
+    "sound": "에 (e)",
+    "correctChar": "え",
+    "options": [
+      "え",
+      "う",
+      "お",
+      "あ"
+    ]
+  },
+  {
+    "id": 5,
+    "type": "hiragana",
+    "row": "a",
+    "sound": "오 (o)",
+    "correctChar": "お",
+    "options": [
+      "お",
+      "あ",
+      "い",
+      "え"
+    ]
+  },
+  {
+    "id": 6,
+    "type": "hiragana",
+    "row": "ka",
+    "sound": "카 (ka)",
     "correctChar": "か",
     "options": [
       "か",
@@ -22,8 +78,62 @@
     ]
   },
   {
-    "id": 3,
-    "sound": "사",
+    "id": 7,
+    "type": "hiragana",
+    "row": "ka",
+    "sound": "키 (ki)",
+    "correctChar": "き",
+    "options": [
+      "き",
+      "か",
+      "く",
+      "こ"
+    ]
+  },
+  {
+    "id": 8,
+    "type": "hiragana",
+    "row": "ka",
+    "sound": "쿠 (ku)",
+    "correctChar": "く",
+    "options": [
+      "く",
+      "け",
+      "こ",
+      "き"
+    ]
+  },
+  {
+    "id": 9,
+    "type": "hiragana",
+    "row": "ka",
+    "sound": "케 (ke)",
+    "correctChar": "け",
+    "options": [
+      "け",
+      "く",
+      "こ",
+      "か"
+    ]
+  },
+  {
+    "id": 10,
+    "type": "hiragana",
+    "row": "ka",
+    "sound": "코 (ko)",
+    "correctChar": "こ",
+    "options": [
+      "こ",
+      "け",
+      "く",
+      "き"
+    ]
+  },
+  {
+    "id": 11,
+    "type": "hiragana",
+    "row": "sa",
+    "sound": "사 (sa)",
     "correctChar": "さ",
     "options": [
       "さ",
@@ -33,8 +143,62 @@
     ]
   },
   {
-    "id": 4,
-    "sound": "타",
+    "id": 12,
+    "type": "hiragana",
+    "row": "sa",
+    "sound": "시 (shi)",
+    "correctChar": "し",
+    "options": [
+      "し",
+      "さ",
+      "す",
+      "そ"
+    ]
+  },
+  {
+    "id": 13,
+    "type": "hiragana",
+    "row": "sa",
+    "sound": "스 (su)",
+    "correctChar": "す",
+    "options": [
+      "す",
+      "し",
+      "せ",
+      "そ"
+    ]
+  },
+  {
+    "id": 14,
+    "type": "hiragana",
+    "row": "sa",
+    "sound": "세 (se)",
+    "correctChar": "せ",
+    "options": [
+      "せ",
+      "す",
+      "そ",
+      "さ"
+    ]
+  },
+  {
+    "id": 15,
+    "type": "hiragana",
+    "row": "sa",
+    "sound": "소 (so)",
+    "correctChar": "そ",
+    "options": [
+      "そ",
+      "せ",
+      "す",
+      "し"
+    ]
+  },
+  {
+    "id": 16,
+    "type": "hiragana",
+    "row": "ta",
+    "sound": "타 (ta)",
     "correctChar": "た",
     "options": [
       "た",
@@ -44,14 +208,991 @@
     ]
   },
   {
-    "id": 5,
-    "sound": "나",
+    "id": 17,
+    "type": "hiragana",
+    "row": "ta",
+    "sound": "치 (chi)",
+    "correctChar": "ち",
+    "options": [
+      "ち",
+      "た",
+      "つ",
+      "と"
+    ]
+  },
+  {
+    "id": 18,
+    "type": "hiragana",
+    "row": "ta",
+    "sound": "츠 (tsu)",
+    "correctChar": "つ",
+    "options": [
+      "つ",
+      "ち",
+      "て",
+      "と"
+    ]
+  },
+  {
+    "id": 19,
+    "type": "hiragana",
+    "row": "ta",
+    "sound": "테 (te)",
+    "correctChar": "て",
+    "options": [
+      "て",
+      "つ",
+      "と",
+      "た"
+    ]
+  },
+  {
+    "id": 20,
+    "type": "hiragana",
+    "row": "ta",
+    "sound": "토 (to)",
+    "correctChar": "と",
+    "options": [
+      "と",
+      "て",
+      "つ",
+      "ち"
+    ]
+  },
+  {
+    "id": 21,
+    "type": "hiragana",
+    "row": "na",
+    "sound": "나 (na)",
     "correctChar": "な",
     "options": [
       "な",
       "に",
       "ぬ",
       "ね"
+    ]
+  },
+  {
+    "id": 22,
+    "type": "hiragana",
+    "row": "na",
+    "sound": "니 (ni)",
+    "correctChar": "に",
+    "options": [
+      "に",
+      "나",
+      "ぬ",
+      "노"
+    ]
+  },
+  {
+    "id": 23,
+    "type": "hiragana",
+    "row": "na",
+    "sound": "누 (nu)",
+    "correctChar": "ぬ",
+    "options": [
+      "ぬ",
+      "네",
+      "노",
+      "나"
+    ]
+  },
+  {
+    "id": 24,
+    "type": "hiragana",
+    "row": "na",
+    "sound": "네 (ne)",
+    "correctChar": "네",
+    "options": [
+      "네",
+      "누",
+      "노",
+      "니"
+    ]
+  },
+  {
+    "id": 25,
+    "type": "hiragana",
+    "row": "na",
+    "sound": "노 (no)",
+    "correctChar": "の",
+    "options": [
+      "の",
+      "ね",
+      "ぬ",
+      "に"
+    ]
+  },
+  {
+    "id": 26,
+    "type": "hiragana",
+    "row": "ha",
+    "sound": "하 (ha)",
+    "correctChar": "は",
+    "options": [
+      "は",
+      "ひ",
+      "ふ",
+      "へ"
+    ]
+  },
+  {
+    "id": 27,
+    "type": "hiragana",
+    "row": "ha",
+    "sound": "히 (hi)",
+    "correctChar": "ひ",
+    "options": [
+      "ひ",
+      "は",
+      "ふ",
+      "ほ"
+    ]
+  },
+  {
+    "id": 28,
+    "type": "hiragana",
+    "row": "ha",
+    "sound": "후 (fu)",
+    "correctChar": "ふ",
+    "options": [
+      "ふ",
+      "ひ",
+      "へ",
+      "ほ"
+    ]
+  },
+  {
+    "id": 29,
+    "type": "hiragana",
+    "row": "ha",
+    "sound": "헤 (he)",
+    "correctChar": "へ",
+    "options": [
+      "へ",
+      "ふ",
+      "ほ",
+      "は"
+    ]
+  },
+  {
+    "id": 30,
+    "type": "hiragana",
+    "row": "ha",
+    "sound": "호 (ho)",
+    "correctChar": "ほ",
+    "options": [
+      "ほ",
+      "へ",
+      "ふ",
+      "ひ"
+    ]
+  },
+  {
+    "id": 31,
+    "type": "hiragana",
+    "row": "ma",
+    "sound": "마 (ma)",
+    "correctChar": "ま",
+    "options": [
+      "ま",
+      "み",
+      "む",
+      "め"
+    ]
+  },
+  {
+    "id": 32,
+    "type": "hiragana",
+    "row": "ma",
+    "sound": "미 (mi)",
+    "correctChar": "み",
+    "options": [
+      "み",
+      "ま",
+      "め",
+      "も"
+    ]
+  },
+  {
+    "id": 33,
+    "type": "hiragana",
+    "row": "ma",
+    "sound": "무 (mu)",
+    "correctChar": "む",
+    "options": [
+      "む",
+      "み",
+      "め",
+      "も"
+    ]
+  },
+  {
+    "id": 34,
+    "type": "hiragana",
+    "row": "ma",
+    "sound": "메 (me)",
+    "correctChar": "め",
+    "options": [
+      "め",
+      "む",
+      "も",
+      "ま"
+    ]
+  },
+  {
+    "id": 35,
+    "type": "hiragana",
+    "row": "ma",
+    "sound": "모 (mo)",
+    "correctChar": "も",
+    "options": [
+      "も",
+      "め",
+      "む",
+      "미"
+    ]
+  },
+  {
+    "id": 36,
+    "type": "hiragana",
+    "row": "ya",
+    "sound": "야 (ya)",
+    "correctChar": "や",
+    "options": [
+      "や",
+      "ゆ",
+      "よ",
+      "あ"
+    ]
+  },
+  {
+    "id": 37,
+    "type": "hiragana",
+    "row": "ya",
+    "sound": "유 (yu)",
+    "correctChar": "ゆ",
+    "options": [
+      "ゆ",
+      "や",
+      "よ",
+      "う"
+    ]
+  },
+  {
+    "id": 38,
+    "type": "hiragana",
+    "row": "ya",
+    "sound": "요 (yo)",
+    "correctChar": "よ",
+    "options": [
+      "よ",
+      "ゆ",
+      "や",
+      "お"
+    ]
+  },
+  {
+    "id": 39,
+    "type": "hiragana",
+    "row": "ra",
+    "sound": "라 (ra)",
+    "correctChar": "ら",
+    "options": [
+      "ら",
+      "り",
+      "る",
+      "れ"
+    ]
+  },
+  {
+    "id": 40,
+    "type": "hiragana",
+    "row": "ra",
+    "sound": "리 (ri)",
+    "correctChar": "り",
+    "options": [
+      "り",
+      "ら",
+      "る",
+      "ろ"
+    ]
+  },
+  {
+    "id": 41,
+    "type": "hiragana",
+    "row": "ra",
+    "sound": "루 (ru)",
+    "correctChar": "る",
+    "options": [
+      "る",
+      "り",
+      "れ",
+      "ろ"
+    ]
+  },
+  {
+    "id": 42,
+    "type": "hiragana",
+    "row": "ra",
+    "sound": "레 (re)",
+    "correctChar": "れ",
+    "options": [
+      "れ",
+      "る",
+      "ろ",
+      "ら"
+    ]
+  },
+  {
+    "id": 43,
+    "type": "hiragana",
+    "row": "ra",
+    "sound": "로 (ro)",
+    "correctChar": "ろ",
+    "options": [
+      "ろ",
+      "れ",
+      "る",
+      "り"
+    ]
+  },
+  {
+    "id": 44,
+    "type": "hiragana",
+    "row": "wa",
+    "sound": "와 (wa)",
+    "correctChar": "わ",
+    "options": [
+      "わ",
+      "を",
+      "ん",
+      "ら"
+    ]
+  },
+  {
+    "id": 45,
+    "type": "hiragana",
+    "row": "wa",
+    "sound": "오 (wo)",
+    "correctChar": "を",
+    "options": [
+      "を",
+      "わ",
+      "ん",
+      "ろ"
+    ]
+  },
+  {
+    "id": 46,
+    "type": "hiragana",
+    "row": "wa",
+    "sound": "응 (n)",
+    "correctChar": "ん",
+    "options": [
+      "ん",
+      "わ",
+      "を",
+      "む"
+    ]
+  },
+  {
+    "id": 101,
+    "type": "katakana",
+    "row": "a",
+    "sound": "아 (a)",
+    "correctChar": "ア",
+    "options": [
+      "ア",
+      "イ",
+      "ウ",
+      "エ"
+    ]
+  },
+  {
+    "id": 102,
+    "type": "katakana",
+    "row": "a",
+    "sound": "이 (i)",
+    "correctChar": "イ",
+    "options": [
+      "イ",
+      "ア",
+      "ウ",
+      "オ"
+    ]
+  },
+  {
+    "id": 103,
+    "type": "katakana",
+    "row": "a",
+    "sound": "우 (u)",
+    "correctChar": "ウ",
+    "options": [
+      "ウ",
+      "イ",
+      "オ",
+      "ア"
+    ]
+  },
+  {
+    "id": 104,
+    "type": "katakana",
+    "row": "a",
+    "sound": "에 (e)",
+    "correctChar": "エ",
+    "options": [
+      "エ",
+      "ウ",
+      "オ",
+      "イ"
+    ]
+  },
+  {
+    "id": 105,
+    "type": "katakana",
+    "row": "a",
+    "sound": "오 (o)",
+    "correctChar": "オ",
+    "options": [
+      "オ",
+      "エ",
+      "ウ",
+      "ア"
+    ]
+  },
+  {
+    "id": 106,
+    "type": "katakana",
+    "row": "ka",
+    "sound": "카 (ka)",
+    "correctChar": "カ",
+    "options": [
+      "カ",
+      "キ",
+      "ク",
+      "ケ"
+    ]
+  },
+  {
+    "id": 107,
+    "type": "katakana",
+    "row": "ka",
+    "sound": "키 (ki)",
+    "correctChar": "キ",
+    "options": [
+      "キ",
+      "カ",
+      "ク",
+      "コ"
+    ]
+  },
+  {
+    "id": 108,
+    "type": "katakana",
+    "row": "ka",
+    "sound": "쿠 (ku)",
+    "correctChar": "ク",
+    "options": [
+      "ク",
+      "ケ",
+      "コ",
+      "キ"
+    ]
+  },
+  {
+    "id": 109,
+    "type": "katakana",
+    "row": "ka",
+    "sound": "케 (ke)",
+    "correctChar": "ケ",
+    "options": [
+      "ケ",
+      "ク",
+      "コ",
+      "カ"
+    ]
+  },
+  {
+    "id": 110,
+    "type": "katakana",
+    "row": "ka",
+    "sound": "코 (ko)",
+    "correctChar": "コ",
+    "options": [
+      "コ",
+      "ケ",
+      "ク",
+      "キ"
+    ]
+  },
+  {
+    "id": 111,
+    "type": "katakana",
+    "row": "sa",
+    "sound": "사 (sa)",
+    "correctChar": "サ",
+    "options": [
+      "サ",
+      "シ",
+      "ス",
+      "セ"
+    ]
+  },
+  {
+    "id": 112,
+    "type": "katakana",
+    "row": "sa",
+    "sound": "시 (shi)",
+    "correctChar": "シ",
+    "options": [
+      "シ",
+      "サ",
+      "ス",
+      "ソ"
+    ]
+  },
+  {
+    "id": 113,
+    "type": "katakana",
+    "row": "sa",
+    "sound": "스 (su)",
+    "correctChar": "ス",
+    "options": [
+      "ス",
+      "シ",
+      "セ",
+      "ソ"
+    ]
+  },
+  {
+    "id": 114,
+    "type": "katakana",
+    "row": "sa",
+    "sound": "세 (se)",
+    "correctChar": "セ",
+    "options": [
+      "セ",
+      "ス",
+      "ソ",
+      "サ"
+    ]
+  },
+  {
+    "id": 115,
+    "type": "katakana",
+    "row": "sa",
+    "sound": "소 (so)",
+    "correctChar": "ソ",
+    "options": [
+      "ソ",
+      "セ",
+      "ス",
+      "シ"
+    ]
+  },
+  {
+    "id": 116,
+    "type": "katakana",
+    "row": "ta",
+    "sound": "타 (ta)",
+    "correctChar": "タ",
+    "options": [
+      "タ",
+      "チ",
+      "ツ",
+      "テ"
+    ]
+  },
+  {
+    "id": 117,
+    "type": "katakana",
+    "row": "ta",
+    "sound": "치 (chi)",
+    "correctChar": "チ",
+    "options": [
+      "チ",
+      "タ",
+      "ツ",
+      "ト"
+    ]
+  },
+  {
+    "id": 118,
+    "type": "katakana",
+    "row": "ta",
+    "sound": "츠 (tsu)",
+    "correctChar": "ツ",
+    "options": [
+      "ツ",
+      "チ",
+      "テ",
+      "ト"
+    ]
+  },
+  {
+    "id": 119,
+    "type": "katakana",
+    "row": "ta",
+    "sound": "테 (te)",
+    "correctChar": "テ",
+    "options": [
+      "テ",
+      "ツ",
+      "ト",
+      "タ"
+    ]
+  },
+  {
+    "id": 120,
+    "type": "katakana",
+    "row": "ta",
+    "sound": "토 (to)",
+    "correctChar": "ト",
+    "options": [
+      "ト",
+      "テ",
+      "ツ",
+      "チ"
+    ]
+  },
+  {
+    "id": 121,
+    "type": "katakana",
+    "row": "na",
+    "sound": "나 (na)",
+    "correctChar": "ナ",
+    "options": [
+      "ナ",
+      "ニ",
+      "ヌ",
+      "ネ"
+    ]
+  },
+  {
+    "id": 122,
+    "type": "katakana",
+    "row": "na",
+    "sound": "니 (ni)",
+    "correctChar": "ニ",
+    "options": [
+      "ニ",
+      "ナ",
+      "ヌ",
+      "ノ"
+    ]
+  },
+  {
+    "id": 123,
+    "type": "katakana",
+    "row": "na",
+    "sound": "누 (nu)",
+    "correctChar": "ヌ",
+    "options": [
+      "ヌ",
+      "ネ",
+      "ノ",
+      "ナ"
+    ]
+  },
+  {
+    "id": 124,
+    "type": "katakana",
+    "row": "na",
+    "sound": "네 (ne)",
+    "correctChar": "ネ",
+    "options": [
+      "ネ",
+      "ヌ",
+      "ノ",
+      "ニ"
+    ]
+  },
+  {
+    "id": 125,
+    "type": "katakana",
+    "row": "na",
+    "sound": "노 (no)",
+    "correctChar": "ノ",
+    "options": [
+      "ノ",
+      "ネ",
+      "ヌ",
+      "ニ"
+    ]
+  },
+  {
+    "id": 126,
+    "type": "katakana",
+    "row": "ha",
+    "sound": "하 (ha)",
+    "correctChar": "ハ",
+    "options": [
+      "ハ",
+      "ヒ",
+      "フ",
+      "ヘ"
+    ]
+  },
+  {
+    "id": 127,
+    "type": "katakana",
+    "row": "ha",
+    "sound": "히 (hi)",
+    "correctChar": "ヒ",
+    "options": [
+      "ヒ",
+      "ハ",
+      "フ",
+      "ホ"
+    ]
+  },
+  {
+    "id": 128,
+    "type": "katakana",
+    "row": "ha",
+    "sound": "후 (fu)",
+    "correctChar": "フ",
+    "options": [
+      "フ",
+      "ヒ",
+      "ヘ",
+      "ホ"
+    ]
+  },
+  {
+    "id": 129,
+    "type": "katakana",
+    "row": "ha",
+    "sound": "헤 (he)",
+    "correctChar": "ヘ",
+    "options": [
+      "ヘ",
+      "フ",
+      "ホ",
+      "ハ"
+    ]
+  },
+  {
+    "id": 130,
+    "type": "katakana",
+    "row": "ha",
+    "sound": "호 (ho)",
+    "correctChar": "ホ",
+    "options": [
+      "ホ",
+      "ヘ",
+      "フ",
+      "ヒ"
+    ]
+  },
+  {
+    "id": 131,
+    "type": "katakana",
+    "row": "ma",
+    "sound": "마 (ma)",
+    "correctChar": "マ",
+    "options": [
+      "マ",
+      "ミ",
+      "ム",
+      "メ"
+    ]
+  },
+  {
+    "id": 132,
+    "type": "katakana",
+    "row": "ma",
+    "sound": "미 (mi)",
+    "correctChar": "ミ",
+    "options": [
+      "ミ",
+      "マ",
+      "メ",
+      "モ"
+    ]
+  },
+  {
+    "id": 133,
+    "type": "katakana",
+    "row": "ma",
+    "sound": "무 (mu)",
+    "correctChar": "ム",
+    "options": [
+      "ム",
+      "ミ",
+      "メ",
+      "モ"
+    ]
+  },
+  {
+    "id": 134,
+    "type": "katakana",
+    "row": "ma",
+    "sound": "메 (me)",
+    "correctChar": "メ",
+    "options": [
+      "メ",
+      "ム",
+      "モ",
+      "マ"
+    ]
+  },
+  {
+    "id": 135,
+    "type": "katakana",
+    "row": "ma",
+    "sound": "모 (mo)",
+    "correctChar": "モ",
+    "options": [
+      "モ",
+      "メ",
+      "ム",
+      "ミ"
+    ]
+  },
+  {
+    "id": 136,
+    "type": "katakana",
+    "row": "ya",
+    "sound": "야 (ya)",
+    "correctChar": "ヤ",
+    "options": [
+      "ヤ",
+      "ユ",
+      "ヨ",
+      "ア"
+    ]
+  },
+  {
+    "id": 137,
+    "type": "katakana",
+    "row": "ya",
+    "sound": "유 (yu)",
+    "correctChar": "ユ",
+    "options": [
+      "ユ",
+      "ヤ",
+      "ヨ",
+      "ウ"
+    ]
+  },
+  {
+    "id": 138,
+    "type": "katakana",
+    "row": "ya",
+    "sound": "요 (yo)",
+    "correctChar": "ヨ",
+    "options": [
+      "ヨ",
+      "ユ",
+      "ヤ",
+      "オ"
+    ]
+  },
+  {
+    "id": 139,
+    "type": "katakana",
+    "row": "ra",
+    "sound": "라 (ra)",
+    "correctChar": "ラ",
+    "options": [
+      "ラ",
+      "リ",
+      "ル",
+      "レ"
+    ]
+  },
+  {
+    "id": 140,
+    "type": "katakana",
+    "row": "ra",
+    "sound": "리 (ri)",
+    "correctChar": "リ",
+    "options": [
+      "リ",
+      "ラ",
+      "ル",
+      "ロ"
+    ]
+  },
+  {
+    "id": 141,
+    "type": "katakana",
+    "row": "ra",
+    "sound": "루 (ru)",
+    "correctChar": "ル",
+    "options": [
+      "ル",
+      "リ",
+      "レ",
+      "ろ"
+    ]
+  },
+  {
+    "id": 142,
+    "type": "katakana",
+    "row": "ra",
+    "sound": "레 (re)",
+    "correctChar": "レ",
+    "options": [
+      "レ",
+      "ル",
+      "ロ",
+      "ラ"
+    ]
+  },
+  {
+    "id": 143,
+    "type": "katakana",
+    "row": "ra",
+    "sound": "로 (ro)",
+    "correctChar": "ロ",
+    "options": [
+      "ロ",
+      "レ",
+      "ル",
+      "リ"
+    ]
+  },
+  {
+    "id": 144,
+    "type": "katakana",
+    "row": "wa",
+    "sound": "와 (wa)",
+    "correctChar": "ワ",
+    "options": [
+      "ワ",
+      "ヲ",
+      "ン",
+      "ラ"
+    ]
+  },
+  {
+    "id": 145,
+    "type": "katakana",
+    "row": "wa",
+    "sound": "오 (wo)",
+    "correctChar": "ヲ",
+    "options": [
+      "ヲ",
+      "ワ",
+      "ン",
+      "ロ"
+    ]
+  },
+  {
+    "id": 146,
+    "type": "katakana",
+    "row": "wa",
+    "sound": "응 (n)",
+    "correctChar": "ン",
+    "options": [
+      "ン",
+      "ワ",
+      "ヲ",
+      "ム"
     ]
   }
 ]
