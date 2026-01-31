@@ -1,5 +1,5 @@
 import axios, { type AxiosInstance, type AxiosRequestConfig, type InternalAxiosRequestConfig } from 'axios';
-import { sleep } from './utils';
+// import { sleep } from './utils';
 import categories from '../data/categories.json';
 import kanaData from '../data/kana.json';
 import wordPicData from '../data/word_pic.json';
@@ -29,7 +29,7 @@ axiosInstance.interceptors.request.use(async (config: InternalAxiosRequestConfig
   const isMock = true;
 
   if (isMock) {
-    await sleep(300 + Math.random() * 500); // Simulate network latency
+    // await sleep(300 + Math.random() * 500); // Simulate network latency (Removed by user request)
 
     const { url, method } = config;
 
